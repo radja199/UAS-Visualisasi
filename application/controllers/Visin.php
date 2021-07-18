@@ -21,6 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $output['bulanan']=$this->bulanan($data);
             $output['total_produk_region']=$this->total_produk_region($data);
             $output['total_penjualan']=$this->total_penjualan($data);
+
             $this->load->view('visin',$output);
             
             
@@ -28,8 +29,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             // mengirim variable $output ke view
 
       
-            // $region=$this->region($data);
-            // echo json_encode($region);
+            // $unit_bulan=$this->unit_bulan($data);
+            // echo json_encode($unit_bulan);
            
             //    //$this->load->view('visin');
         }
@@ -236,6 +237,57 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             return json_encode($tabs);
 
         }
+
+        // function unit_bulan($data)
+        // {
+            
+        //     $result=array();
+        //     foreach ($data as $row ) {
+                
+        //         // mengambil data tanggal
+        //         $time=strtotime($row->OrderDate);
+        //         $bulan=date('n',$time);
+        //         $tahun=date('Y',$time);
+        //         if(isset($result[$bulan]) == false)
+        //         {
+        //             $result[$tahun][$bulan]=$row->Total;
+        //         }else{
+        //             $total=$result[$row->$bulan];
+        //             $result[$tahun][$bulan]=$total+ (int) $row->$bulan;
+        //         }
+
+        //     };
+
+        //     // Mengkonversi index data $result kedalam array
+        //     $keys=array_keys($result);
+        //     // membuat data inisial
+        //     $tabs=[['Bulan']];
+        //     //menambhakan header data sesaui dengan tahun yang ditemukan
+        //     foreach ($keys as $row ) {
+                
+        //         array_push($row,(string)$result[$row]);
+               
+        //     }
+        //     // membuat data bulan dalam satu tahun
+        //     $bulan=['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nop','Des'];
+
+        //     // masukkan data penjualan bulanan kedalam tabulasi
+        //     for ($i=1;$i<12;$i++)
+        //     {
+        //         $dt=[$bulan[$i-1]];
+        //         foreach ($keys as $row ) {
+        //             array_push($dt,(int)$result[$row][$i]);
+        //         }
+        //         array_push($tabs,$dt);
+        //     }
+        //     return json_encode($tabs);
+            
+           
+
+
+        // }
+        
+        
 
     }
 
